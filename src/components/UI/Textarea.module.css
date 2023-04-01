@@ -1,0 +1,121 @@
+:root{
+	--B1 : #333333;
+	--h1 : 20px;
+}
+
+.TextContainer{
+	width: 100%;
+	position: relative;
+	display: flex;
+}
+
+.TextInput{
+	width: 100%;
+    height: var(--height);
+    padding: 16px;
+    font-size: var(--fontsize);
+    line-height: 20px;
+	resize: none;
+	border: none;
+	color: var(--B1);
+}
+
+textarea::-webkit-input-placeholder{
+	color: #33333320;
+	font-weight: 700;
+}
+
+textarea:focus{
+	outline: none;
+}
+
+.Code{
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #585858;
+    border-radius: 12px;
+}
+
+.CodeWrapper{
+    border-radius: 0px 0px 12px 12px;
+    margin: 20px 0px 0px !important;
+    min-height: 480px;
+}
+
+
+
+textarea.prismLive,
+pre.prism-live {
+	padding: .2rem .5rem;
+	box-sizing: border-box;
+	margin: 0;
+}
+
+textarea.prismLive {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+    padding : 1em;
+	text-align: left;
+	tab-size: 4;
+	color:transparent; 
+	caret-color: rgba(255, 255, 255, 0.8);
+	margin : 20px  0px 0px;
+	/* color: hsla(0,0%,50%,.4); */
+	font-family:  Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	line-height: 1.5;
+  /* letter-spacing: 0.5em; */
+	cursor: text;
+	white-space: pre;
+	border: 0;
+	outline: none;
+	background: transparent;
+	resize: none;
+	--selection-background: #00a2ff50;
+	--selection-color: #00000000;
+    
+}
+
+textarea.prismLive::-webkit-scrollbar{
+    display: none;
+}
+
+@supports (not (caret-color: black)) and (-webkit-text-fill-color: black) {
+	textarea.prismLive {
+		color: inherit;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+	/* Setting specific colors is needed
+	 * because otherwise Firefox shows blank text */
+	textarea.prismLive::-moz-selection {
+		background: var(--selection-background);
+		color: var(--selection-color);
+	}
+
+	textarea.prismLive::selection {
+		background: var(--selection-background);
+		color: var(--selection-color);
+	}
+
+pre.prismLive {
+	flex: 1;
+	position: relative;
+	pointer-events: none;
+	overflow: hidden;
+	max-height: 100%;
+	--scrollbar-width: 17px;
+	padding-bottom: var(--scrollbar-width);
+	padding-right: var(--scrollbar-width);
+}
+
+	pre.prismLive > code:empty::before {
+		content: " "
+	}
+

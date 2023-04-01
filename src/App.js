@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Code from './Prismjs';
+import Code from './components/UI/Code';
 
 function App() {
   return (

@@ -1,13 +1,14 @@
 
 import React from 'react';
-import Button from './UI/Button';
-import CardList from './list/CardList';
+import Button from '../UI/Button';
+import CardList from '../list/CardList';
 import data from '../data.json'
+import styles from './Page.module.css';
 
 
-function Mainpage() {
+export default function Mainpage() {
   return (
-    <div className="Mainpage">
+    <div className={styles.Page_Wrapper}>
        <CardList posts = {data}></CardList>
        <Button title ="글작성" onClick = {function(){
         console.log("moving")
@@ -16,5 +17,3 @@ function Mainpage() {
     </div>
   );
 }
-
-export default Mainpage;
