@@ -1,0 +1,69 @@
+/* PostItem */
+.Post_Wrapper{
+    width: calc(100% - 32px);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+}
+
+.Post_Wrapper:hover{
+    background: lightgrey;
+}
+
+.Post_Title{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* PostList */
+.PostList_Wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.PostList_Wrapper > *:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+/* CommentItem */
+.Comment_Wrapper{
+    width: calc(100% - 32px);
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 8px;
+    cursor: pointer;
+    background: white;
+}
+
+.Comment_Wrapper:hover{
+    background: lightgrey;
+}
+
+.Comment_Content{
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+/* CommentList */
+.CommentList_Wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.CommentList_Wrapper > *:not(:last-child) {
+    margin-bottom: 16px;
+}
