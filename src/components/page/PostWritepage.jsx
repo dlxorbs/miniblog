@@ -19,6 +19,7 @@ export default function PostWritePage(props){
 
             <TextInput height = {300}
                         fontsize = {16}
+                        placeholder = {'내용 없음'}
                         value = {content}
                         onChange = {function(e){ setContent(e.target.value) }}/>
 
