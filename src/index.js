@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Mainpage from './components/page/Mainpage';
 import PostWritePage from './components/page/PostWritepage';

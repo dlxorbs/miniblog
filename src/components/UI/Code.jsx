@@ -16,10 +16,6 @@ export default function Code(props) {
     Prism.highlightAll();
   }, [code]);
   
-
-
-                
-
   
   return (
     <div className={styles.Code}>
@@ -48,8 +44,6 @@ export default function Code(props) {
                   }
                 }}></textarea>
     </div>
-
-
 
   );
 }
