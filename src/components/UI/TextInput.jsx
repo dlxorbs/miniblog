@@ -19,7 +19,7 @@ export default function TextInput(props){
                                 '--fontweight': props.fontweight}}
                     height = {props.height}
                     value = {props.value}
-                    onChange = {props.onChange }
+                    onChange = {props.onChange}
                  ></textarea>
             </div>
     )
