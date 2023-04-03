@@ -3,6 +3,7 @@ import Button from "../UI/Button";
 import TextInput from "../UI/TextInput";
 import Code from "../UI/Code";
 import styles from './Page.module.css';
+import SmallButton from "../UI/SmallButton";
 
 
 export default function PostWritePage(props){
@@ -27,7 +28,7 @@ export default function PostWritePage(props){
                         onChange = {function(e){ setTitle(e.target.value) 
                         e.target.style.height = '20px'
                         e.target.style.height = (12 + e.target.scrollHeight)+'px'}}/>
-
+         
             <TextInput height = {20}
                         fontsize = {16}
                         fontweight = {500}
@@ -41,6 +42,7 @@ export default function PostWritePage(props){
                         }}/>
 
             <Code></Code>
+            <SmallButton  name = {'asdasd'}></SmallButton>
             <Button title ="밤밤밤"
                     onClick ={function(){
                         console.log("글작성하기")

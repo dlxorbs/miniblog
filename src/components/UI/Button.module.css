@@ -5,3 +5,23 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
+.smallButton{
+    width: auto;
+    height: 24px;
+    font-size: 24px;
+    color: #33333320;
+    cursor: pointer;
+    display: flex;
+    border: 0.5px solid #33333320;
+    border-radius: 4px;
+}
+
+.smallButton:hover{
+    width: auto;
+    height: 24px;
+    font-size: 24px;
+    color: #33333370;
+    cursor: pointer;
+    background-color: #FFFDF440;
+}

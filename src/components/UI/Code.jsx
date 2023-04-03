@@ -26,7 +26,7 @@ export default function Code(props) {
       </pre>
 
       <textarea className={`${styles.prismLive}`} 
-                value={code} placeholder='코드를 입력하세요' 
+                value={code} placeholder='코드를 입력하세요.' 
                 onChange = {function(e){setCode(e.target.value)}}
                 onKeyDown={function(e){
                   console.log(e.target.selectionStart)
@@ -41,6 +41,7 @@ export default function Code(props) {
                     console.log(start)
                     // console.log(end)
                     setCode(e.target.value)
+
                   }
                 }}></textarea>
     </div>

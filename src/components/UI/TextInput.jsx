@@ -1,6 +1,6 @@
-import React , { useRef }from "react";
+import React , {useState, useRef }from "react";
 import styles from './Textarea.module.css'
-
+import SmallButton from "./SmallButton";
 
 export default function TextInput(props){
     //props
@@ -9,9 +9,13 @@ export default function TextInput(props){
     // placeholder
     // onChange : 이벤트
 
+ const [visible , setvisible] = useState(true);
     
     return(
             <div className={styles.TextContainer}>
+              <SmallButton onClick = {function(){
+                setvisible(false)
+              }} icon = {visible? 'add' : ''}></SmallButton>
                 <textarea className= {styles.TextInput}
                     placeholder = {props.placeholder}
                     style = {{'--height':props.height+'px' ,
