@@ -9,18 +9,15 @@ export default function TextInput(props){
     // placeholder
     // onChange : 이벤트
 
- const [visible , setvisible] = useState(true);
-    
     return(
             <div className={styles.TextContainer}>
-              <SmallButton onClick = {function(){
-                setvisible(false)
-              }} icon = {visible? 'add' : ''}></SmallButton>
                 <textarea className= {styles.TextInput}
                     placeholder = {props.placeholder}
                     style = {{'--height':props.height+'px' ,
+                              '--minheight':props.minheight+'px' ,
                               '--fontsize' : props.fontsize +'px',
-                                '--fontweight': props.fontweight}}
+                              '--fontweight': props.fontweight,
+                              '--lineheight': props.lineheight + '%'}}
                     height = {props.height}
                     value = {props.value}
                     onChange = {props.onChange}
