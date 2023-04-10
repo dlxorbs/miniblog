@@ -5,11 +5,15 @@ import Code from "../UI/Code";
 import styles from './Page.module.css';
 import SmallButton from "../UI/SmallButton";
 import ContentContainer from "../UI/Textinputcontainer";
-
+import ScrollList from '../UI/ScrollList';
 
 export default function PostWritePage(props){
     const [title, setTitle] = useState('')
+    
+    const [content, setContent] = useState('')
     const textarea = useRef();
+    const [clicked , setclicked] = useState(false);
+
 
     
 
@@ -24,9 +28,32 @@ export default function PostWritePage(props){
                         lineheight ={100}
                         value = {title}
                         onChange = {function(e){ setTitle(e.target.value) 
-                        e.target.style.height = (20 + e.target.scrollHeight)+'px'}}/>
+                        e.target.style.height = '20px'
+                        e.target.style.height = (0 + e.target.scrollHeight)+'px'}}/>
 
-            <ContentContainer></ContentContainer>
+
+        <SmallButton onClick = {function(e){
+            setclicked(true)
+            if(clicked == true){
+
+            }
+     
+        }} icon ='add'></SmallButton>
+        <ScrollList></ScrollList>
+        <TextInput  height = {20}
+                    fontsize = {20}
+                    fontweight = {500}
+                    lineheight = {150}
+                    placeholder = {'내용 없음'}
+                    value = {content}
+                    onChange = {(e)=>{
+                        setContent(e.target.value);
+                        console.log(e.target.style)
+                        e.target.style.height = '20px'
+                        e.target.style.height = (0 + e.target.scrollHeight)+'px'
+                    }}/>
+                        
+
             <Code></Code>
             <Button title ="밤밤밤"
                     onClick ={function(){

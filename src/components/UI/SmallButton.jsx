@@ -3,11 +3,10 @@ import styles from "./Button.module.css"
 
 export default function SmallButton(props){
 return(
-    <div className={styles.smallButton} onClick = {props.onClick}>
-        <span class="material-symbols-rounded">
+    <button className={ `${styles.smallButton} material-symbols-rounded`} onClick = {props.onClick}>
+
         {props.icon}
-        </span>
-        {props.name}
-    </div>
+
+    </button>
 )
 }

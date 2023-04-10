@@ -12,9 +12,10 @@ export default function ContentContainer(){
 
 return(
 <div className={styles.Textinputcontainer}>
-        <SmallButton onClick = {function(){
+        <SmallButton onClick = {function(e){
+            console.log(e.target)
             setvisible(false)
-        }} icon = {visible? 'add' : ''}></SmallButton>
+        }} icon = {visible? 'add' : 'delete'}></SmallButton>
 
         <TextInput  height = {20}
                     fontsize = {20}

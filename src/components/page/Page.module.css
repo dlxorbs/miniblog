@@ -1,4 +1,5 @@
 .Page_Wrapper{
+    position: relative;
     padding: 16px;
     width: 1196px;
     display: flex;
