@@ -8,7 +8,7 @@ export default function CardList(props){
     const list = props.posts.map(function(item){ 
             return(
                 <Card 
-                
+                thumbnail = {item.imgsrc}
                 key = {item.id}
                 title = {item.title}
                 content = {item.content}

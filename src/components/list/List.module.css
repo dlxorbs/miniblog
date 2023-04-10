@@ -16,6 +16,17 @@
     background: lightgrey;
 }
 
+.thumbnail{
+    width: 344px;
+    height: auto;
+}
+
+
+.textContainer{
+    width: 100%;
+    height: auto;
+}
+
 .Post_Title{
     font-size: 20px;
     font-weight: 500;
