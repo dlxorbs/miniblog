@@ -1,7 +1,6 @@
 /* PostItem */
 .Post_Wrapper{
-    width: calc(100% - 32px);
-    padding: 16px;
+    width: 344px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -10,26 +9,83 @@
     border-radius: 8px;
     cursor: pointer;
     background: white;
+    color: #333333;
+    overflow: hidden;
+
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+
 }
 
 .Post_Wrapper:hover{
-    background: lightgrey;
+
 }
 
 .thumbnail{
-    width: 344px;
-    height: auto;
+    width: 100%;
+    height: 245px;
 }
 
+.thumbnail > img{
+    width: 100%;
+    height: 100%;
+}
 
 .textContainer{
-    width: 100%;
-    height: auto;
+    max-width: 344px;
+    height: 156px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+h3{
+    font-size: 20px;
+    margin: 0px;
+}
+.textContainer > p{
+  width: 100%;
+  font-size: 16px;
+  margin: 0px;
 }
 
 .Post_Title{
     font-size: 20px;
     font-weight: 500;
+}
+.profilecontainer{
+    width: -webkit-fill-available;
+    display: flex;
+    max-width: 344px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+
+}
+
+.userid{
+    
+    width: 100%;
+    font-size: 12px;
+    font-weight: 700;
+    color: #333333;
+    margin: 0px 0px 0px 10px;
+}
+
+.profilecontainer > img{
+    border-radius: 9999px;
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    background-color: #999999;
+}
+
+.days{
+    min-width: 65px;
+    text-align: right;
+    font-size: 12px;
+    color: #999999;
 }
 
 /* PostList */
@@ -78,3 +134,28 @@
 .CommentList_Wrapper > *:not(:last-child) {
     margin-bottom: 16px;
 }
+
+
+.maincontainer{
+    top: 240px;
+    --grid-col : 4;
+   width: 100%;
+   display:grid;
+   grid-template-columns: repeat(var(--grid-col), 1fr);
+   gap: 20px 16px;
+   padding: 240px 0px 0px 0px;
+   /* width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px; */
+}
+
+
+.userprofilecontianer{
+
+}
+
+.userprofile{
+    width: 380px;
+    height: 380px;
+   }

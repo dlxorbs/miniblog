@@ -1,15 +1,16 @@
 import React from "react";
+import styles from './List.module.css'
 
-export default function Userprofile(){
+export default function Userprofile(props){
 
     return(
-        <div className="userprofilecontianer">
-            <div className="userprofile">
+        <div className={styles.userprofilecontianer}>
+            <div className={styles.userprofile}>
                 <img src={props.userprofile} alt="" />
             </div>
 
-            <h2 className="blogname"> {props.userid} 's Blog</h2>
-            <p className="intro"> {props.userinfo} </p>
+            <h2 className={styles.blogname}> {props.userid} 's Blog</h2>
+            <p className={styles.intro}> {props.userinfo} </p>
         </div>
     )
 }

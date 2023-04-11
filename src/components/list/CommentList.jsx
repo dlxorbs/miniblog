@@ -15,4 +15,4 @@ import CommentItem from "./CommentItem";
         </div>
           )
 }
-export default CommentList
+export default CommentList;

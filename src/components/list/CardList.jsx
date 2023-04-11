@@ -12,6 +12,9 @@ export default function CardList(props){
                 key = {item.id}
                 title = {item.title}
                 content = {item.content}
+                profilethumb = {item.profilethumb}
+                userid = {item.userid}
+                days = {item.days}
                 onClick = {function(){
                 console.log(item.id + '이동')
                 }}></Card>
@@ -19,9 +22,9 @@ export default function CardList(props){
     })
 
     return(
-        <div className="maincontainer">
-            {list}
-        </div>
+                <div className={styles.maincontainer}>
+                    {list}
+                </div>
     );
 
 }
