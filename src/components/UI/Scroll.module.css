@@ -17,7 +17,6 @@
     gap: 12px;
 }
 
-
 .scrollitem > img {
     width: 24px;
     height: 24px;
@@ -30,6 +29,7 @@
     color: #666666;
     font-weight: 600;
 }
+
 .scrolllist{
     position: absolute;
     z-index: 8;
@@ -40,5 +40,6 @@
     display: flex;
     flex-direction: column;
     border-radius: 4px;
-
+    bottom: 96px;
+    left: -24px;
 }

@@ -5,20 +5,21 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    border: 1px solid grey;
+
     border-radius: 8px;
     cursor: pointer;
     background: white;
     color: #333333;
     overflow: hidden;
 
-    box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
     transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 
 }
 
 .Post_Wrapper:hover{
-
+    
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
 }
 
 .thumbnail{
@@ -143,7 +144,7 @@ h3{
    display:grid;
    grid-template-columns: repeat(var(--grid-col), 1fr);
    gap: 20px 16px;
-   padding: 240px 0px 0px 0px;
+   padding: 120px 0px 0px 0px;
    /* width: auto;
     display: flex;
     flex-wrap: wrap;
@@ -152,10 +153,24 @@ h3{
 
 
 .userprofilecontianer{
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333333;
 }
 
 .userprofile{
     width: 380px;
     height: 380px;
+    border-radius: 9999px;
+   }
+
+   .userprofile > img{ 
+    width: 380px;
+    height: 380px;
+    border-radius: 9999px;
+   }
+
+   .intro{
+    color: #999999;
    }

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from './List.module.css'
 import Card from "./Card";
-
+import { useNavigate } from "react-router-dom";
 
 export default function CardList(props){
-
+    const nav = useNavigate();
     const list = props.posts.map(function(item){ 
             return(
                 <Card 
@@ -17,6 +17,7 @@ export default function CardList(props){
                 days = {item.days}
                 onClick = {function(){
                 console.log(item.id + '이동')
+                nav("/post/" + item.id)
                 }}></Card>
             )
     })
