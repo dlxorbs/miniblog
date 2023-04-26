@@ -38,7 +38,6 @@ export default function PostWritePage(props){
                         onChange = {function(e){ setTitle(e.target.value) 
                         e.target.style.height = '44px'
                         e.target.style.height = (44 + e.target.scrollHeight)+'px'}}/>
-
    
         <SmallButton onClick = { toggle} icon ='add'></SmallButton> 
         {clicked &&  <ScrollList ></ScrollList>}
