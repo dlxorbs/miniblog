@@ -17,69 +17,80 @@ export default function PostWritePage(props){
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [clicked , setclicked] = useState(false);
-    const [code, setCode] = useState('')
-    const textarea = useRef();
+    const [editable , setEditabled] = useState(true)
+    //컴포넌트를 어레이화 시켜서 제작
+    const [textareas, setTextareas] = useState([]);
 
-    
-    const [components, setComponents] = useState([]);
+    // 타입변경
+    const typechange = (type) => {
+        const id = new Date().getTime().toString();
+        const newTextArea = { id, type, value: "" };
+        setTextareas([...textareas, newTextArea]);
+      };
 
 
-    const appendItem = function(){
-        setComponents([...components,   <TextInput  height = {20}
-                                                    fontsize = {20}
-                                                    fontweight = {500}
-                                                    lineheight = {150}
-                                                    placeholder = {'내용 없음'}
-                                                    value = {content}
-                                                    //append시 밸류값이 겹치기 떄문에 에러가 남 다시 바꾸기
-                                                    onChange = {(e)=>{
-                                                        setContent(e.target.value);
-                                                        console.log(e.target.style)
-                                                        e.target.style.height = '20px'
-                                                        e.target.style.height = (20 + e.target.scrollHeight)+'px'
-                                                    }}/>]);
-                                }
+    //코드를 클릭했을 때 타입이 코드인 값을 제작하고 타입이 코드인 아이와 같이 순서를 지정해주려면?
 
-// 코드의 색상
+    const Textareaappend = (e, id) => {
+
+        const newTextArea = textareas.map((text) =>
+        //아이디가 같게 나오면 vlaue들옥
+            text.id == id ? { ...text, value: e.target.value } : text
+            );
+            setTextareas(newTextArea);
+    };
+
+    // 코드의 색상 codes 어레이가 변경될 때 마다 실행 시킬 수 있도록 제작
     useEffect(() => {
       Prism.highlightAll();
-    }, [code]);
-    
-    const makeTextarea = function(){
-        
-    }
+    }, [textareas]);
     
 
     const toggle = function(e){
         setclicked(!clicked)
     }
 
+    console.log(textareas)
+
     return(
         <div className = {styles.Page_Wrapper}>
 
             <TextInput height = {44}
-                        minheihgt = {20}
+                        minheight = {116}
                         fontsize = {42}
                         fontweight = {700}
                         placeholder = {'제목 없음'}
                         lineheight ={100}
                         value = {title}
-                        onChange = {function(e){ setTitle(e.target.value) 
-                        e.target.style.height = '44px'
-                        e.target.style.height = (44 + e.target.scrollHeight)+'px'}}/>
+                        onChange = {function(e){
+                        setTitle(e.target.value);    
+                        e.target.style.height = 'auto'
+                        e.target.style.height = (e.target.scrollHeight)+'px'}}/>
+                      
    
-        <SmallButton onClick = { ()=>{
+        <SmallButton onClick = {()=>{
                 toggle();
         }} icon ='add'></SmallButton> 
 
         {clicked && <ScrollList onClickText = {(e)=>{
-            appendItem()
-        }}
-                    ></ScrollList>}
+
+                                //있는배열 이후에 newTextArea 추가
+                               typechange("text")
+                                setclicked(!clicked)
+                                }}
+                                // 코드 버튼 클릭시
+                                onClickCode = {(e)=>{
+   
+                                    //있는배열 이후에 newCodeArea 추가
+                                    typechange("code")
+                                    setclicked(!clicked)
+                                }}
+                            ></ScrollList>}
 
 
 
         <TextInput  height = {20}
+                    minheight = {62}
                     fontsize = {20}
                     fontweight = {500}
                     lineheight = {150}
@@ -88,11 +99,76 @@ export default function PostWritePage(props){
                     onChange = {(e)=>{
                         setContent(e.target.value);
                         console.log(e.target.style)
-                        e.target.style.height = '20px'
-                        e.target.style.height = (20 + e.target.scrollHeight)+'px'
+                        e.target.style.height = '62px'
+                        e.target.style.height = ( e.target.scrollHeight)+'px'
                     }}/>
 
-            <Code code = {code}
+
+
+                   
+{textareas.map((text) => 
+          text.type === "text" ? (
+                  <TextInput
+                        height = {20}
+                        minheight = {62}
+                        fontsize = {20}
+                        fontweight = {500}
+                        lineheight = {150}
+                        placeholder = {'내용 없음'}
+                        key={text.id}
+                        value={text.value}
+                        onChange={(e) => {Textareaappend(e, text.id)
+                                            e.target.style.height = '62px'
+                                            e.target.style.height = (30 + e.target.scrollHeight)+'px'
+                        }}
+                  />
+          ) : (   <Code
+                    key={text.id}
+                    value={text.value}
+                    code = {text.value}
+                    editable = {editable}
+                    onChange={(e) => {
+                        Textareaappend(e, text.id)
+                    }}
+                    onKeyDown = {(e)=>{
+                    console.log(e.target.selectionStart)
+                    if(e.keyCode==9){
+                        const start = e.target.selectionStart
+                        const end = e.target.selectionEnd
+                        const tab = '\t'
+                        e.target.value = e.target.value.substring(0, start) + tab + e.target.value.substring(end);
+                        e.target.selectionStart = start+1;
+                        e.target.selectionEnd = start+1;
+                        e.preventDefault()
+                        console.log(start)
+                        // console.log(end)
+                    }
+                  }}  />
+          )
+      )}
+                
+
+            <Button title ="밤밤밤"
+                    onClick ={function(){
+                    const timestamp = new Date().getTime().toString()
+                        db.collection('post').doc(timestamp).set({
+                            id : timestamp,
+                            title : title,
+                            content : content,
+                            aftercontents : textareas,
+                            comments : []
+                        }).then(
+                            nav("/")
+                      
+                        )
+
+                        
+                    }}/>
+        </div>
+    )
+}
+
+     {/* <Code code = {code}
                   value = {code}
                   onChange = {function(e){setCode(e.target.value)}}
                   onKeyDown = {function(e){
@@ -109,27 +185,6 @@ export default function PostWritePage(props){
                       // console.log(end)
                       setCode(e.target.value)
                     }
-                  }}  />
+                  }}  /> */}
 
-
-{components.map((component, index) => (
-                <div key={index}>{component}</div>
-            ))}
-            <Button title ="밤밤밤"
-                    onClick ={function(){
-                    const timestamp = new Date().getTime().toString()
-                        db.collection('post').doc(timestamp).set({
-                            id : timestamp,
-                            title : title,
-                            content : content,
-                            comments : []
-                        }).then(
-                            nav("/")
-                      
-                        )
-
-                        
-                    }}/>
-        </div>
-    )
-}
+{/* 텍스트 영역에 map함수를 사용하여 TextInput을 사용할 수 있게 제작  */}

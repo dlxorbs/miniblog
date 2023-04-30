@@ -25,6 +25,7 @@ useEffect(function(){
     
 },[])
 
+
   return (
     <div className={styles.Page_Wrapper}>
         <Userprofile
@@ -36,6 +37,7 @@ useEffect(function(){
        <Button title ="글작성" onClick = {function(){
         nav('/write')
        }}></Button>
+
 
     </div>
   );
