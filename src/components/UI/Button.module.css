@@ -1,16 +1,21 @@
 .borderedButton{
-    padding : 8px 16px;
+    padding : 12px 20px;
     font-size: 16px;
-    border-width: 1px;
     border-radius: 8px;
+    width: auto;
     cursor: pointer;
+    border: none;
+    color: #FFF;
+    font-weight: 700;
+    background-color: #007ED9;
+    margin: var(--margin);
 }
 
 .smallButton{
     position: absolute;
     left: -24px;
     /* 글쓰기 버튼의 크기 더하기 패딩값 */
-    bottom: 86px;
+    bottom: 90px;
     width: 24px;
     height: 24px;
     font-size: 24px;

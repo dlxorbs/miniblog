@@ -1,7 +1,6 @@
 :root{
 	--B1 : #5f5a53;
 	--h1 : 20px;
-	--backgroundcolor : #ffffff;
 }
 
 
@@ -36,6 +35,7 @@ textarea::-webkit-input-placeholder{
 	font-weight: 700;
     font-family: "San Francisco";;
 }
+
 
 .prismLive::-webkit-input-placeholder{
 	color: #ffffff60;

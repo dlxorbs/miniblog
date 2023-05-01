@@ -18,7 +18,6 @@ export default function Code(props) {
 
       <textarea className={`${styles.prismLive}`} 
                 value={props.value} placeholder='코드를 입력하세요.' 
-                contentEditable ={props.editable}
                 onChange = {props.onChange}
                 onKeyDown={props.onKeyDown}></textarea>
     </div>

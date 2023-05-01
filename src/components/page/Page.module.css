@@ -1,3 +1,7 @@
+html{
+    background-color: #f7f7f7;
+}
+
 .Page_Wrapper{
     position: relative;
     padding: 16px;
@@ -5,14 +9,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: auto;
+    justify-content: flex-start;
+    margin: 60px auto;
     gap: 12px;
 }
 
 .Page_Container{
     width: 100%;
-    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
 }
 
 .Page_Container > *:not(:last-child) {
@@ -41,3 +47,42 @@
     font-weight: 500;
 }
 
+.textWrapper{
+    width: 100%;
+    white-space: pre-wrap;
+}
+
+h1{
+    width: 100%;
+    font-size: 40px;
+    height: auto;
+    margin-bottom: 4px !important;
+}
+
+.text{
+    width: 100%;
+}
+
+.Comment_Container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 1px solid #99999960;
+}
+
+
+.day{
+    font-size: 16px;
+    color: #33333380;
+   }
+
+
+   .btnContainer{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+   }

@@ -17,7 +17,7 @@ export default function PostWritePage(props){
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [clicked , setclicked] = useState(false);
-    const [editable , setEditabled] = useState(true)
+
     //컴포넌트를 어레이화 시켜서 제작
     const [textareas, setTextareas] = useState([]);
 
@@ -126,7 +126,6 @@ export default function PostWritePage(props){
                     key={text.id}
                     value={text.value}
                     code = {text.value}
-                    editable = {editable}
                     onChange={(e) => {
                         Textareaappend(e, text.id)
                     }}

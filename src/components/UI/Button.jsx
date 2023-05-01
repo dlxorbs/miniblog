@@ -8,7 +8,7 @@ export default function Button(props){
     // 온클릭이벤트
 
 return(
-    <button className= {styles.borderedButton} onClick = {props.onClick}>
+    <button className= {styles.borderedButton} style={{ '--margin': props.margin } } onClick = {props.onClick}>
          {props.title || "button"}
     </button>
 
