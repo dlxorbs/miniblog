@@ -5,10 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import Mainpage from './components/page/Mainpage';
 import PostWritePage from './components/page/PostWritepage';
 import PostView from './components/page/PostView'
+import Header from './components/UI/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <BrowserRouter>
+  <Header></Header>
   <Routes>
     <Route index element = {<Mainpage/>}></Route>
     <Route path='write' element={<PostWritePage/>}></Route>

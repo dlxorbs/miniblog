@@ -1,0 +1,43 @@
+.Header{
+    width: 100vw;
+    background-color: #ffffff;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+
+}
+
+.Header_Container{
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Header_LOGO{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.Header_RightContainer{
+    display: flex;
+    gap: 16px;
+}
+
+.Header_Profile{
+    background-image: url(https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201611/15/htm_2016111510552285703.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 99999px;
+}
+
+.Header_Container > a{
+  text-decoration: none;
+  color: #333333;
+}

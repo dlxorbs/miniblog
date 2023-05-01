@@ -25,11 +25,13 @@
 .thumbnail{
     width: 100%;
     height: 245px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .thumbnail > img{
     width: 100%;
-    height: 100%;
 }
 
 .textContainer{
@@ -66,7 +68,6 @@ h3{
 }
 
 .userid{
-    
     width: 100%;
     font-size: 12px;
     font-weight: 700;
@@ -83,6 +84,7 @@ h3{
 }
 
 .days{
+    width: 100%;
     min-width: 65px;
     text-align: right;
     font-size: 12px;
@@ -152,7 +154,7 @@ h3{
     background-image: var(--backimg);
     background-position: center;
     width: 100vw;
-    height: 500px;
+    height: 560px;
 }
 
 .userprofile{
@@ -162,7 +164,7 @@ h3{
     display: flex;
     justify-content: center;
     overflow: hidden;
-    border: solid 10px #ffffff;
+    border: solid 10px #f7f7f7;
    }
 
 
@@ -192,7 +194,7 @@ h3{
     width: 100%;
     height: 50%;
     bottom: 0;
-    background-color: #fff;
+    background-color: #f7f7f7;
     display: flex;
     justify-content: center;
    }

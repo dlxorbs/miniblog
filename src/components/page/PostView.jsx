@@ -59,7 +59,6 @@ export default function PostView() {
                           code = {item.value}
             />
         )
-          
       )
     })
 
@@ -111,7 +110,7 @@ export default function PostView() {
 
               <Button title = "삭제하기" onClick = {function(){ Delete(); }}/>  
           </div>
-          
+
       </div>
   );
 }

@@ -13,9 +13,9 @@
 
 .smallButton{
     position: absolute;
-    left: -24px;
+    left: -36px;
     /* 글쓰기 버튼의 크기 더하기 패딩값 */
-    bottom: 90px;
+    bottom: 16px;
     width: 24px;
     height: 24px;
     font-size: 24px;

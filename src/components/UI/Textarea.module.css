@@ -16,6 +16,7 @@
     min-height: var(--minheight);
 	height: var(--height);
     padding: 16px;
+	margin: var(--margin);
     font-size: var(--fontsize);
 	font-weight: var(--fontweight);
     line-height: var(--lineheight);

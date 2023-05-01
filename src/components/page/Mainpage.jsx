@@ -34,9 +34,12 @@ useEffect(function(){
            userinfo = {'반갑습니다.'}
            backimg = {'url(https://velog.velcdn.com/images/heelieben/post/b5926f2b-d3d7-48c2-8f02-bc1356400d27/image.png)'}></Userprofile>
        <CardList posts = {data}></CardList>
-       <Button title ="글작성" onClick = {function(){
+     
+     <div className={styles.btnContainer}>
+     <Button title ="글작성" onClick = {function(){
         nav('/write')
        }}></Button>
+     </div>
 
 
     </div>

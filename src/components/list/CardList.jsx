@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './List.module.css'
 import Card from "./Card";
+import moment from "moment";
 import { useNavigate } from "react-router-dom";
 
 export default function CardList(props){
@@ -14,7 +15,7 @@ export default function CardList(props){
                 content = {item.content}
                 profilethumb = {item.profilethumb}
                 userid = {item.userid}
-                days = {item.days}
+                days = {moment.unix(Math.floor(item.id/1000)).startOf('hour').fromNow()}
                 onClick = {function(){
                 console.log(item.id + '이동')
                 nav("/post/" + item.id)

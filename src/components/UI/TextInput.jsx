@@ -17,7 +17,8 @@ export default function TextInput(props){
                               '--minheight':props.minheight+'px' ,
                               '--fontsize' : props.fontsize +'px',
                               '--fontweight': props.fontweight,
-                              '--lineheight': props.lineheight + '%'}}
+                              '--lineheight': props.lineheight + '%',
+                              '--margin': props.margin}}
                     height = {props.height}
                     value = {props.value}
                     onChange = {props.onChange}
