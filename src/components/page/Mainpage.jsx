@@ -2,15 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../UI/Button';
 import CardList from '../list/CardList';
-// import data from '../data.json'
 import styles from './Page.module.css';
 import Userprofile from '../list/Userprofile'
 import { useNavigate } from 'react-router-dom';
 import {db} from '../../firebase.js'
 
-
-
 export default function Mainpage() {
+
   const nav = useNavigate();
   const [data, setData] = useState([])
 
@@ -22,9 +20,7 @@ useEffect(function(){
     })
     setData(Datas);
     })
-    
 },[])
-
 
   return (
     <div className={styles.Page_Wrapper}>

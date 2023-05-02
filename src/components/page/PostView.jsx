@@ -66,7 +66,7 @@ export default function PostView() {
     <div className={styles.Page_Wrapper}>
           <div className={styles.Page_Container}>
             <h1>{post.title}</h1>
-            <span className={styles.day}>{ moment.unix(time).startOf('hour').fromNow() }</span>
+            <span className={styles.day}>{ moment.unix(time).startOf('min').fromNow() }</span>
                   {/* 콘텐트 확인하는 */}
             <span className={styles.textWrapper}>{post.content}</span>
 

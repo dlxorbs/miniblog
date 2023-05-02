@@ -28,9 +28,6 @@ export default function PostWritePage(props){
         setTextareas([...textareas, newTextArea]);
       };
 
-
-    //코드를 클릭했을 때 타입이 코드인 값을 제작하고 타입이 코드인 아이와 같이 순서를 지정해주려면?
-
     const Textareaappend = (e, id) => {
 
         const newTextArea = textareas.map((text) =>
@@ -45,12 +42,10 @@ export default function PostWritePage(props){
       Prism.highlightAll();
     }, [textareas]);
     
-
+    //토글형식으로 제작할 수 있게
     const toggle = function(e){
         setclicked(!clicked)
     }
-
-    console.log(textareas)
 
     return(
         <div className = {styles.Page_Wrapper}>
@@ -77,7 +72,7 @@ export default function PostWritePage(props){
                     {clicked && <ScrollList onClickText = {(e)=>{
 
                                         //있는배열 이후에 newTextArea 추가
-                                    typechange("text")
+                                        typechange("text")
                                         setclicked(!clicked)
                                         }}
                                         // 코드 버튼 클릭시
@@ -88,8 +83,6 @@ export default function PostWritePage(props){
                                             setclicked(!clicked)
                                         }}
                                     ></ScrollList>}
-
-
 
                     <TextInput  height = {20}
                                 minheight = {62}
@@ -124,25 +117,24 @@ export default function PostWritePage(props){
                                                                 e.target.style.height = ( e.target.scrollHeight)+'px'
                                             }}
                                     />
-                            ) : (   <Code
-                                        key={text.id}
-                                        value={text.value}
-                                        code = {text.value}
-                                        onChange={(e) => {
-                                            Textareaappend(e, text.id)
-                                        }}
-                                        onKeyDown = {(e)=>{
-                                        console.log(e.target.selectionStart)
-                                        if(e.keyCode==9){
-                                            const start = e.target.selectionStart
-                                            const end = e.target.selectionEnd
-                                            const tab = '\t'
-                                            e.target.value = e.target.value.substring(0, start) + tab + e.target.value.substring(end);
-                                            e.target.selectionStart = start+1;
-                                            e.target.selectionEnd = start+1;
-                                            e.preventDefault()
-                                            console.log(start)
-                                            // console.log(end)
+                            ) : (   <Code   key={text.id}
+                                            value={text.value}
+                                            code = {text.value}
+                                            onChange={(e) => {
+                                                Textareaappend(e, text.id)
+                                            }}
+                                            onKeyDown = {(e)=>{
+                                            console.log(e.target.selectionStart)
+                                            if(e.keyCode==9){
+                                                const start = e.target.selectionStart
+                                                const end = e.target.selectionEnd
+                                                const tab = '\t'
+                                                e.target.value = e.target.value.substring(0, start) + tab + e.target.value.substring(end);
+                                                e.target.selectionStart = start+1;
+                                                e.target.selectionEnd = start+1;
+                                                e.preventDefault()
+                                                console.log(start)
+                                                // console.log(end)
                                         }
                     }}/>
                 )

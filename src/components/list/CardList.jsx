@@ -15,7 +15,7 @@ export default function CardList(props){
                 content = {item.content}
                 profilethumb = {item.profilethumb}
                 userid = {item.userid}
-                days = {moment.unix(Math.floor(item.id/1000)).startOf('hour').fromNow()}
+                days = {moment.unix(Math.floor(item.id/1000)).startOf('min').fromNow()}
                 onClick = {function(){
                 console.log(item.id + '이동')
                 nav("/post/" + item.id)
