@@ -5,7 +5,6 @@ import Code from './components/UI/Code';
 
 function App() {
   return (
-<Code/>
   );
 }
 
