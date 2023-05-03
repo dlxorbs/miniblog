@@ -11,12 +11,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <BrowserRouter basename={process.env.PUBLIC_URL}>
   <Header></Header>
+  
   <Routes>
     <Route index element = {<Mainpage/>}></Route>
     <Route path='write' element={<PostWritePage/>}></Route>
     <Route path='post/:id' element={<PostView/>}></Route>
   </Routes>
 </BrowserRouter>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
