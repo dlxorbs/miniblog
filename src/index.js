@@ -9,7 +9,7 @@ import Header from './components/UI/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<BrowserRouter>
+<BrowserRouter basename={process.env.PUBLIC_URL}>
   <Header></Header>
   <Routes>
     <Route index element = {<Mainpage/>}></Route>
