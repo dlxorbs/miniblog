@@ -51,3 +51,16 @@
     display: flex;
 }
 
+
+input[type = file]{
+ display: none;
+}
+/* img */
+.Imgcontainer{
+	width: auto;
+	max-width: 100%;
+}
+
+.Imgcontainer > img {
+	width: 100%;
+}

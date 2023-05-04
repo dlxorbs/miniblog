@@ -1,140 +1,134 @@
-:root{
-    --contianerweb-l : 1440px;
-    --contianerweb-m : 1064px;
-    --contianerweb-s : 704px;
-    --grid-col-l : 4;
-    --grid-col-m : 3;
-    --grid-col-s : 2;
+:root {
+  --contianerweb-l: 1440px;
+  --contianerweb-m: 1064px;
+  --contianerweb-s: 704px;
+  --grid-col-l: 4;
+  --grid-col-m: 3;
+  --grid-col-s: 2;
 }
 
-html{
-    background-color: #f7f7f7;
+html {
+  background-color: #f7f7f7;
 }
 
-.Page_Wrapper{
+.Page_Wrapper {
+  position: relative;
+  padding: 0px 16px;
+  width: 1440px;
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 80px auto;
+}
+.Page_SecondWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.Page_Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+
+.Page_Container > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.Post_Container {
+  padding: 8px 16px;
+  border: 1px solid grey;
+  border-radius: 8px;
+}
+
+.Title_Text {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.Content_Text {
+  font-size: 20px;
+  line-height: 32px;
+  white-space: pre-wrap;
+}
+
+.Comment_Label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.textWrapper {
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+h1 {
+  width: 100%;
+  font-size: 40px;
+  height: auto;
+  margin-bottom: 4px !important;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.text {
+  width: 100%;
+}
+
+.Comment_Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #99999960;
+}
+
+.day {
+  font-size: 16px;
+  color: #33333380;
+}
+
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (max-width: 1500px) {
+  .Page_Wrapper {
     position: relative;
     padding: 0px 16px;
-    width: 1440px;
+    width: var(--contianerweb-m);
     min-height: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     margin: 80px auto;
+  }
 }
-.Page_SecondWrapper{
+
+@media (max-width: 1200px) {
+  .Page_Wrapper {
     position: relative;
-    width: 100%;
+    padding: 0px 16px;
+    width: var(--contianerweb-s);
+    min-height: 800px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-}
-
-.Page_Container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
-}
-
-.Page_Container > *:not(:last-child) {
-    margin-bottom: 16px;
-}
-
-.Post_Container{
-    padding: 8px 16px;
-    border: 1px solid grey;
-    border-radius: 8px;
-}
-
-.Title_Text{
-    font-size: 28px;
-    font-weight: 500;
-}
-
-.Content_Text{
-    font-size: 20px;
-    line-height: 32px;
-    white-space: pre-wrap;
-}
-
-.Comment_Label{
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.textWrapper{
-    width: 100%;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
-
-h1{
-    width: 100%;
-    font-size: 40px;
-    height: auto;
-    margin-bottom: 4px !important;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
-
-.text{
-    width: 100%;
-}
-
-.Comment_Container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: #ffffff;
-    border-radius: 4px;
-    border: 1px solid #99999960;
-}
-
-
-.day{
-    font-size: 16px;
-    color: #33333380;
-   }
-
-
-   .btnContainer{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 24px;
-    margin-top: 24px;
-   }
-
-   @media (max-width: 1500px){
-    
-        .Page_Wrapper{
-            position: relative;
-            padding: 0px 16px;
-            width: var(--contianerweb-m);
-            min-height: 800px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            margin: 80px auto;
-        }
-   }
-
-
-   
-   @media (max-width: 1200px){
-    
-    .Page_Wrapper{
-        position: relative;
-        padding: 0px 16px;
-        width: var(--contianerweb-s);
-        min-height: 800px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin: 80px auto;
-    }
+    align-items: center;
+    justify-content: space-between;
+    margin: 80px auto;
+  }
 }
