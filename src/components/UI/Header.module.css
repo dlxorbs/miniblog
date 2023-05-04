@@ -1,3 +1,10 @@
+:root{
+    --contianerweb-l : 1440px;
+    --contianerweb-m : 1064px;
+    --contianerweb-s : 704px;
+}
+
+
 .Header{
     width: 100vw;
     background-color: #ffffff;
@@ -12,7 +19,7 @@
 }
 
 .Header_Container{
-    width: 1440px;
+    width: var(--contianerweb-l);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,4 +47,24 @@
 .Header_Container > a{
   text-decoration: none;
   color: #333333;
+}
+
+@media (max-width : 1500px) {
+    .Header_Container{
+        width: var(--contianerweb-m);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+}
+
+@media (max-width : 1200px) {
+    .Header_Container{
+        width: var(--contianerweb-s);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
 }

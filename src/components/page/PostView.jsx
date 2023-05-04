@@ -25,7 +25,9 @@ export default function PostView() {
     const [comment, setComment] = useState('');
     const [time, setTime] = useState('');
 
-
+    const onRemove = ()=>{
+      window.confirm('삭제하시겠습니까?') ? alert('삭제되었습니다.') : alert('취소되었씁니다.')
+    }
 //포스트의 데이터를 생성될때 받아옴
     useEffect(()=>{
       db.collection('post').doc(postId).get().then((doc)=>{
@@ -44,7 +46,7 @@ export default function PostView() {
 
     //삭제함수 제작
     const Delete = function(){
-      db.collection('post').doc(postId).delete().then(function(){ nav('/') })
+      db.collection('post').doc(postId).delete().then((e)=>{ onRemove(); nav('/')  })
     }
  
     console.log()
