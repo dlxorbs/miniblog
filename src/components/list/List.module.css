@@ -1,74 +1,72 @@
-:root{
-    --contianerweb-l : 1440px;
-    --contianerweb-m : 1064px;
-    --contianerweb-s : 704px;
-    --grid-col-l : 4;
-    --grid-col-m : 3;
-    --grid-col-s : 2;
+:root {
+  --contianerweb-l: 1440px;
+  --contianerweb-m: 1064px;
+  --contianerweb-s: 704px;
+  --grid-col-l: 4;
+  --grid-col-m: 3;
+  --grid-col-s: 2;
 }
 
 /* PostItem */
-.Post_Wrapper{
-    width: 344px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+.Post_Wrapper {
+  width: 344px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 
-    border-radius: 8px;
-    cursor: pointer;
-    background: white;
-    color: #333333;
-    overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  color: #333333;
+  overflow: hidden;
 
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
-    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
-
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 16px 0px;
+  transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
 }
 
-.Post_Wrapper:hover{
-    
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+.Post_Wrapper:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
 }
 
 .profileUserprofile > p {
-    margin: 0;
+  margin: 0;
 }
 
-.thumbnail{
-    width: 100%;
-    height: 245px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+.thumbnail {
+  width: 100%;
+  height: 245px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-image: var(--back);
+  background-position: center;
+  background-size: cover;
 }
 
-.thumbnail > img{
-    width: 100%;
+.thumbnail > img {
+  width: 100%;
 }
 
-.textContainer{
-    width: 312px;
-    height: 156px;
-    padding: 20px 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    overflow: hidden;
-
-
+.textContainer {
+  width: 312px;
+  height: 156px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
 }
 
-h3{
-    min-height: 30px;
-    font-size: 20px;
-    margin: 0px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+h3 {
+  min-height: 30px;
+  font-size: 20px;
+  margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-
-.textContainer > p{
+.textContainer > p {
   width: 100%;
   font-size: 16px;
   margin: 0px;
@@ -81,234 +79,217 @@ h3{
   overflow: hidden;
 }
 
-.Post_Title{
-    font-size: 20px;
-    font-weight: 500;
+.Post_Title {
+  font-size: 20px;
+  font-weight: 500;
 }
-.profilecontainer{
-    width: -webkit-fill-available;
-    display: flex;
-    max-width: 344px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-
-}
-
-.userid{
-    width: 100%;
-    font-size: 12px;
-    font-weight: 700;
-    color: #333333;
-    margin: 0px 0px 0px 10px;
+.profilecontainer {
+  width: -webkit-fill-available;
+  display: flex;
+  max-width: 344px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
 }
 
-.profilecontainer > img{
-    border-radius: 9999px;
-    width: 32px;
-    min-width: 32px;
-    height: 32px;
-    background-color: #999999;
+.userid {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333333;
+  margin: 0px 0px 0px 10px;
 }
 
-.days{
-    width: 100%;
-    min-width: 65px;
-    text-align: right;
-    font-size: 12px;
-    color: #999999;
+.profilecontainer > img {
+  border-radius: 9999px;
+  width: 32px;
+  min-width: 32px;
+  height: 32px;
+  background-color: #999999;
+}
+
+.days {
+  width: 100%;
+  min-width: 65px;
+  text-align: right;
+  font-size: 12px;
+  color: #999999;
 }
 
 /* PostList */
-.PostList_Wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+.PostList_Wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .PostList_Wrapper > *:not(:last-child) {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 /* CommentItem */
-.Comment_Wrapper{
-    width: calc(100% - 48px);
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    cursor: pointer;
-    gap: 10px;
-    border-bottom: 0.5px solid #99999960;
+.Comment_Wrapper {
+  width: calc(100% - 48px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  cursor: pointer;
+  gap: 10px;
+  border-bottom: 0.5px solid #99999960;
 }
 
-.Comment_Content{
-    font-size: 16px;
-    white-space: pre-wrap;
-    margin: 0;
-    
+.Comment_Content {
+  font-size: 16px;
+  white-space: pre-wrap;
+  margin: 0;
 }
 
 /* CommentList */
-.CommentList_Wrapper{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
+.CommentList_Wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+.maincontainer {
+  top: 240px;
 
-.maincontainer{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 16px;
+  padding: 120px 0px 0px 0px;
+}
+
+.userprofilecontianer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333333;
+  background-image: var(--backimg);
+  background-position: center;
+  width: 100vw;
+  height: 560px;
+}
+
+.userprofile {
+  width: 340px;
+  height: 340px;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border: solid 10px #f7f7f7;
+}
+
+.intro {
+  color: #999999;
+}
+
+.profileUserprofile {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  width: var(--contianerweb-l);
+}
+
+.blur {
+  background-color: #33333380;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.whitestack {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+}
+
+.profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.imgcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background-image: url(https://bot-log-product.s3.ap-northeast-2.amazonaws.com/product/tving/still/P001599424-%EB%84%A4%EB%AA%A8%EB%B0%94%EC%A7%80_%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8B%9C%EC%A6%8C9.jpeg);
+  background-position: center;
+  background-size: cover;
+}
+
+.textcon {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.textcon > * {
+  margin: 0px;
+  font-size: 12px;
+}
+
+.textcon > :first-child {
+  color: #333333;
+  font-weight: 700;
+}
+
+.textcon > :last-child {
+  color: #999999;
+}
+
+@media (max-width: 1500px) {
+  .profileUserprofile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    width: var(--contianerweb-m);
+  }
+
+  .maincontainer {
     top: 240px;
-
-   width: 100%;
-   display:flex;
-   flex-wrap: wrap;
-   gap: 20px 16px;
-   padding: 120px 0px 0px 0px;
-
+    width: 100%;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(var(--grid-col-m), 1fr);
+    gap: 20px 16px;
+    padding: 120px 0px 0px 0px;
+  }
 }
 
-
-.userprofilecontianer{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #333333;
-    background-image: var(--backimg);
-    background-position: center;
-    width: 100vw;
-    height: 560px;
-}
-
-.userprofile{
-    width: 340px;
-    height: 340px;
-    border-radius: 9999px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    border: solid 10px #f7f7f7;
-   }
-
-
-   .intro{
-    color: #999999;
-   }
-
-   .profileUserprofile{
+@media (max-width: 1200px) {
+  .profileUserprofile {
     display: flex;
     flex-direction: column;
     position: absolute;
     bottom: 0;
-    width: var(--contianerweb-l);
-   }
+    width: var(--contianerweb-s);
+  }
 
-   .blur{
-    background-color: #33333380;
-    position: absolute;
+  .maincontainer {
+    top: 240px;
     width: 100%;
-    height : 100%;
-    z-index: 1;
-   }
-
-   .whitestack{
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-    height: 50%;
-    bottom: 0;
-    background-color: #f7f7f7;
-    display: flex;
-    justify-content: center;
-   }
-
-   .profile{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-   }
-
-   .imgcon{
-    width: 40px;
-    height: 40px;
-    border-radius: 9999px;
-    background-image: url(https://bot-log-product.s3.ap-northeast-2.amazonaws.com/product/tving/still/P001599424-%EB%84%A4%EB%AA%A8%EB%B0%94%EC%A7%80_%EC%8A%A4%ED%8F%B0%EC%A7%80%EB%B0%A5_%EC%8B%9C%EC%A6%8C9.jpeg);
-    background-position: center;
-    background-size: cover;
-    }
-
-    .textcon{
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: center;
-
-    }
-
-    .textcon > * {
-        margin: 0px;
-        font-size: 12px;
-    }
-
-    .textcon > :first-child{
-        color: #333333 ;
-        font-weight: 700;
-    }
-
-    .textcon > :last-child{
-        color: #999999 ;
-    }
-
-
-    @media (max-width: 1500px){
-    
-        .profileUserprofile{
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            bottom: 0;
-            width: var(--contianerweb-m);
-           }
-
-                
-        .maincontainer{
-            top: 240px;
-            width: 100%;
-            display:grid;
-            flex-wrap: wrap;
-            grid-template-columns: repeat(var(--grid-col-m), 1fr);
-            gap: 20px 16px;
-            padding: 120px 0px 0px 0px;
-
-        }
-                
-   }
-
-   @media (max-width: 1200px){
-    
-    .profileUserprofile{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        bottom: 0;
-        width: var(--contianerweb-s);
-       }
-
-            
-    .maincontainer{
-        top: 240px;
-        width: 100%;
-        display:grid;
-        flex-wrap: wrap;
-        grid-template-columns: repeat(var(--grid-col-s), 1fr);
-        gap: 20px 16px;
-        padding: 120px 0px 0px 0px;
-
-    }
-            
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(var(--grid-col-s), 1fr);
+    gap: 20px 16px;
+    padding: 120px 0px 0px 0px;
+  }
 }

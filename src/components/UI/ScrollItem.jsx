@@ -13,7 +13,7 @@ export default function ScrollItem(props) {
         <input
           id="file"
           type="file"
-          accept="image/gif , image/png, image/jpeg, image/jpg"
+          accept=" image/png, image/jpeg, image/jpg"
           onChange={props.onChange}
         />
       )}

@@ -34,19 +34,22 @@ export default function PostWritePage(props) {
   };
 
   useEffect(() => {
+    //마지막 어레이의 값 확인 할 수 있도록 어레이 번호에 맞는 길이 제작
+    num >= -1 ? setNum(0) : setNum(textareas.length - 1);
+    // 어레이의 길이가 0보다 클때 text value 를 확인 가능하게 만듬
+    textareas.length > 0
+      ? setAppendText(textareas[num].value)
+      : setAppendText(".");
+  }, [textareas.length, textareas]);
+
+  useEffect(() => {
     setIndex(textareas.findIndex((arr) => arr.search == "img"));
     index > -1
       ? setThumb(textareas[index].value)
       : setThumb(
           "https://velog.velcdn.com/images/heelieben/post/87bbb462-dbd5-49a5-a9e9-70ed2007cdaf/image.png"
         );
-    //마지막 어레이의 값 확인 할 수 있도록 어레이 번호에 맞는 길이 제작
-    num == -1 ? setNum(0) : setNum(textareas.length - 1);
-    // 어레이의 길이가 0보다 클때 text value 를 확인 가능하게 만듬
-    textareas.length > 0
-      ? setAppendText(textareas[num].value)
-      : setAppendText("");
-  }, [textareas.length]);
+  });
 
   const Textareaappend = (e, id) => {
     const newTextArea = textareas.map((text) =>
@@ -61,6 +64,7 @@ export default function PostWritePage(props) {
     Prism.highlightAll();
     console.log(textareas);
   }, [textareas]);
+
   //토글형식으로 제작할 수 있게
   const toggle = function (e) {
     setclicked(!clicked);
@@ -129,8 +133,9 @@ export default function PostWritePage(props) {
             //이미지추가
             onClickImg={(e) => {
               // file클릭 이벤트 추가
-              typechange("img");
+
               $("#file").click();
+              typechange("img");
             }}
             onChangeImg={(e) => {
               const file = e.target.files[0];

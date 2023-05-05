@@ -105,7 +105,7 @@ export default function PostView() {
           height={90}
           minheight={90}
           value={comment}
-          palceholder="댓글을 작성해주세요."
+          placeholder={`댓글을 작성해주세요.`}
           onChange={function (e) {
             setComment(e.target.value);
             e.target.style.height = "90px";
