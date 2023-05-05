@@ -14,7 +14,7 @@
 }
 
 .borderedButton:hover {
-  background-color: #0067b1;
+  background-color: #006dbc;
   margin: var(--margin);
 }
 
