@@ -21,7 +21,8 @@ export default function PostWritePage(props) {
 
   //컴포넌트를 어레이화 시켜서 제작
   const [textareas, setTextareas] = useState([]);
-
+  const [num, setNum] = useState(textareas.length - 1);
+  const [appendtext, setAppendText] = useState("");
   //   thumbnail 추가 ---> array에서 처음 인덱스 찾아서 변경
   const [index, setIndex] = useState();
 
@@ -39,7 +40,13 @@ export default function PostWritePage(props) {
       : setThumb(
           "https://velog.velcdn.com/images/heelieben/post/87bbb462-dbd5-49a5-a9e9-70ed2007cdaf/image.png"
         );
-  });
+    //마지막 어레이의 값 확인 할 수 있도록 어레이 번호에 맞는 길이 제작
+    num == -1 ? setNum(0) : setNum(textareas.length - 1);
+    // 어레이의 길이가 0보다 클때 text value 를 확인 가능하게 만듬
+    textareas.length > 0
+      ? setAppendText(textareas[num].value)
+      : setAppendText("");
+  }, [textareas.length]);
 
   const Textareaappend = (e, id) => {
     const newTextArea = textareas.map((text) =>
@@ -75,7 +82,7 @@ export default function PostWritePage(props) {
         userid: "wksehs123",
       })
       .then(() => {
-        console.log(thumb);
+        // console.log(thumb);
         nav("/");
       });
   };
@@ -234,9 +241,7 @@ export default function PostWritePage(props) {
           title="작성하기"
           onClick={() => {
             // 텍스트 영역에서 추가 후 입력이 안되었을 때 내용을 입력해 달라는 식 추가
-            content == "" ||
-            title == "" ||
-            textareas[textareas.length - 1].value == ""
+            content == "" || title == "" || appendtext == ""
               ? alert("내용을 입력해주세요.")
               : done();
           }}
