@@ -17,11 +17,13 @@ export default function PostWritePage(props) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [clicked, setclicked] = useState(false);
-  const [thumb, setThumb] = useState(
-    "https://velog.velcdn.com/images/heelieben/post/87bbb462-dbd5-49a5-a9e9-70ed2007cdaf/image.png"
-  );
+  const [thumb, setThumb] = useState("");
+
   //컴포넌트를 어레이화 시켜서 제작
   const [textareas, setTextareas] = useState([]);
+
+  //   thumbnail 추가 ---> array에서 처음 인덱스 찾아서 변경
+  const [index, setIndex] = useState();
 
   // 타입변경
   const typechange = (type) => {
@@ -29,6 +31,15 @@ export default function PostWritePage(props) {
     const newTextArea = { id, type, value: "" };
     setTextareas([...textareas, newTextArea]);
   };
+
+  useEffect(() => {
+    setIndex(textareas.findIndex((arr) => arr.search == "img"));
+    index > -1
+      ? setThumb(textareas[index].value)
+      : setThumb(
+          "https://velog.velcdn.com/images/heelieben/post/87bbb462-dbd5-49a5-a9e9-70ed2007cdaf/image.png"
+        );
+  });
 
   const Textareaappend = (e, id) => {
     const newTextArea = textareas.map((text) =>
@@ -43,7 +54,6 @@ export default function PostWritePage(props) {
     Prism.highlightAll();
     console.log(textareas);
   }, [textareas]);
-
   //토글형식으로 제작할 수 있게
   const toggle = function (e) {
     setclicked(!clicked);
@@ -135,14 +145,15 @@ export default function PostWritePage(props) {
                 );
 
                 setTextareas(newTextArea);
+
                 //   setThumb(thumbnail)
               };
               reader.readAsDataURL(file);
+
+              console.log(index);
+
               // console.log(file)
               setclicked(!clicked);
-              //   thumbnail 추가 ---> array에서 처음 인덱스 찾아서 변경
-              const index = textareas.findIndex((arr) => arr.search == "img");
-              setThumb(textareas[index].value);
             }}
           ></ScrollList>
         )}
