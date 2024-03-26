@@ -26,7 +26,7 @@ export default function Mainpage() {
     <div className={styles.Page_Wrapper}>
       <Userprofile
         userprofile={
-          "https://nujhrcqkiwag1408085.cdn.ntruss.com/static/upload/movie_still_images/94109/22bffeec010ed720a2751464010aa39b.jpg"
+          "https://velog.velcdn.com/images/heelieben/post/b5926f2b-d3d7-48c2-8f02-bc1356400d27/image.png"
         }
         userid={"알감자"}
         userinfo={"반갑습니다."}
